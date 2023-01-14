@@ -15,6 +15,7 @@
 
 //Selecting all required elements
 const startScreen = document.querySelector("startScreen");
+const start = document.querySelector ("start")
 const timer = document.querySelector("time");
 const questions = document.querySelector ("questions");
 const questionsTitle = document.querySelector ("questionsTitle");
@@ -24,6 +25,24 @@ const finalScore = document.querySelector ("finalScore");
 const initials = document.querySelector ("initials");
 const submit = document.querySelector ("submit");
 const feedback = document.querySelector ("feedback")
+
+// if start button is clicked
+
 start.onclick = () =>{
 
+startScreen.remove("startScreen");//hide starting screen
+questions.add("questions") //show questions
+showQuestions (0) //calling showQuestions function
+queCounter(1); //passing 1 parameter to queCounter
+    startTimer(15); //calling startTimer function
+    startTimerLine(0); //calling startTimerLine function
+
 }
+
+
+
+
+
+
+
+
