@@ -9,3 +9,21 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
+
+
+
+
+//Selecting all required elements
+const startScreen = document.querySelector("startScreen");
+const timer = document.querySelector("time");
+const questions = document.querySelector ("questions");
+const questionsTitle = document.querySelector ("questionsTitle");
+const choices = document.querySelector ("choices");
+const endScreen = document.querySelector ("endScreen");
+const finalScore = document.querySelector ("finalScore");
+const initials = document.querySelector ("initials");
+const submit = document.querySelector ("submit");
+const feedback = document.querySelector ("feedback")
+start.onclick = () =>{
+
+}
