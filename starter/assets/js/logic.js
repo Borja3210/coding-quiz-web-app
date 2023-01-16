@@ -95,7 +95,7 @@ function setQuestion(id) {
     }
 }
 
-// EVENT FUNCTION CHECK ANSWERS BEGING PROCESS
+// EVENT FUNCTION CHECK ANSWERS BEGIN PROCESS
 function checkAnswer(event) {
     event.preventDefault();
 
@@ -104,7 +104,7 @@ function checkAnswer(event) {
     let p = document.createElement("p");
     correctWrong.appendChild(p);
 
-    // DISPLAY NEW ELEMENT FOR X AMOUNR OF TIME
+    // DISPLAY NEW ELEMENT FOR X AMOUNT OF TIME
     setTimeout(function () {
         p.style.display = 'none';
     }, 1000);
@@ -126,4 +126,90 @@ function checkAnswer(event) {
     }
     setQuestion(questionCount);
 }
+function addScore(event) {
+    event.preventDefault();
+
+    finalEl.style.display = "none";
+    highscoresEl.style.display = "block";
+
+    let init = initialsInput.value.toUpperCase();
+    scoreList.push({ initials: init, score: secondsLeft });
+
+    // HIGH SCORE SORTING LIST
+    scoreList = scoreList.sort((a, b) => {
+        if (a.score < b.score) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    
+    scoreListEl.innerHTML="";
+    for (let i = 0; i < scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        scoreListEl.append(li);
+    }
+
+    // STORAGE OF SCORE 
+    storeScores();
+    displayScores();
+}
+
+function storeScores() {
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+}
+
+function displayScores() {
+    // Parsing the JSON string to an object
+    let storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+
+    // WHEN RETRIEVED FROM LOCAL, ARRAY
+    if (storedScoreList !== null) {
+        scoreList = storedScoreList;
+    }
+}
+
+// CLEAR THE STORE
+function clearScores() {
+    localStorage.clear();
+    scoreListEl.innerHTML="";
+}
+
+// START OFF ALL EVENT 
+// Start timer and display first question when click start quiz
+start.addEventListener("click", startQuiz);
+
+// CHECK ANSWER LISTENER EVENT
+ansBtn.forEach(item => {
+    item.addEventListener('click', checkAnswer);
+});
+
+// ADDING A SCORE EVENT
+submitScrBtn.addEventListener("click", addScore);
+
+// GO BACK LISTENER EVENT FUNCTION 
+goBackBtn.addEventListener("click", function () {
+    highscoresEl.style.display = "none";
+    codersIntro.style.display = "block";
+    secondsLeft = 75;
+    time.textContent = `Time:${secondsLeft}s`;
+});
+
+// CLEAR SCORE
+clearScrBtn.addEventListener("click", clearScores);
+
+// HIGH SCORE BUTTON ALERT AND DISPLAY LISTENER EVENT
+viewScrBtn.addEventListener("click", function () {
+    if (highscoresEl.style.display === "none") {
+        highscoresEl.style.display = "block";
+    } 
+    else if (highscoresEl.style.display === "block") {
+        highscoresEl.style.display = "none";
+    } 
+    
+    else {
+        return alert("Take Quiz. Be the highest score.");
+    }
+});
 
