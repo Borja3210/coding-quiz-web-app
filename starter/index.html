@@ -1,51 +1,108 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Coding Quiz</title>
+<html lang="en">
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz </title>
+    <link rel="stylesheet" href='./assets/css/styles.css'>
+</head>
+<body>
+    <!-- BEGIN HEADER-->
+    <header class="header-title" id="header">
+        <div class="veiw-high-scores-button">
+            <div class="style-indiv">
+                <button class="view-high-scores high-score" id="view-scores" type="button"> View High Scores</button>
+            </div>
+            <div class="style-indiv">
+                <p class="timer">Time: 75</p>
+            </div>
+        </div>
 
-  <body>
-    <div class="scores"><a href="highscores.html">View Highscores</a></div>
+    </header>
+    <!--BEGIN MAIN -->
 
-    <div class="timer">Time: <span id="time">0</span></div>
+    <main>
+        <!-- BEGIN INITIAL CALLING LAYOUT-->
+        <section class="wrapper" id="challenge-begins">
 
-    <div class="wrapper">
-      <!-- start info screen -->
-      <div id="start-screen" class="start">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-          Try to answer the following code-related questions within the time
-          limit. Keep in mind that incorrect answers will penalize your
-          score/time by ten seconds!
-        </p>
-        <!-- start quiz button -->
-        <button id="start">Start Quiz</button>
-      </div>
-         <!-- quiz box -->
-      <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
-      </div>
+            <!-- TOP DIV CONTENT [TITLE/QUESTION]-->
+            <div class="main-title">
+                <h1 class="switch" id="switch-out">Coding Quiz Challenge</h1>                
+            </div>
 
-      <!-- end screen -->
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
-      </div>
+            <!--MIDDLE DIV CONTENT [OPENING PARAGRAPH/POSSIBLE ANSWERS]-->
+            <div class="main-display" id="question-answer">
+                <p class="p-style" id="question-li">Answer the following code-related questions with-in the time
+                    limit. Incorrect answers will penalize your score-time by 10 seconds. Final score equals to time remaining. 
+                </p>
+            </div>
 
-      <div id="feedback" class="feedback hide"></div>
-    </div>
+            <!--BOTTOM DIV CONTENT [START/RESULTS]-->
+            <div class="results" id="row-bottow">
+                <button id="start" class="start-btn btn-style-main" id="button-start">Start Quiz</button>
+            </div>
+        </section>
 
+        <!--BEGIN HIDDEN SECTIONS-->
+
+        <!--FIRST SECTION SWITCH-IN -->
+        <section class="all-question" id="questions">
+            <div class="questions-list">
+                <div class="list-inner">
+                    <ul class="questions-ul">
+                        <h2 class="switch" id="question">Here is the question</h2>
+                        <li class="questions-li "><button id="answer-1" value="0" type="button"
+                                class="answer-btn">Answer-1</button></li>
+                        <li class="questions-li"><button id="answer-2" value="1" type="button"
+                                class="answer-btn ">Answer-2</button></li>
+                        <li class="questions-li"><button id="answer-3" value="2" type="button"
+                                class="answer-btn">Answer-3</button></li>
+                        <li class="questions-li"><button id="answer-4" value="3" type="button"
+                                class="answer-btn">Answer-4</button></li>
+                    </ul>
+
+                    <div id="right-wrong" class="font-weight-light font-italic">
+
+                        <hr> <!-- RESULTS WILL ADDED HERE VIA JS ONCE RAN -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--FINAL SCORE ANSWER SECTION-->
+        <section class=".wrapper1" id="final-score">
+            <div class="style-indiv">
+                <div class="style-2">
+                    <h2>Great Job!</h2>
+                    <p>Your Final Score: <span id="score">0</span></p>
+                     <p class="p-style-1">Enter initials:
+                     <span class="initials-form style-4"><input placeholder="initials" id="initials"
+                     class="span-1"></span>
+                    <button id="submit-score" class="submit-score-btn btn-style-main">Submit</button>
+                    <hr>
+                        </p>
+                </div>
+            </div>
+                
+        </section>
+
+        <!--HIGH SCORE RESULTS-->
+        <section id="high-scores">
+            <div class="style-indiv">
+                <div class="style-3">
+                    <p><h2>High Scores</h2></p>
+                    <ol class="score-list"></ol>
+                    <button id="goBack" class="go-back-btn btn-style-main">Go Back</button>
+                    <button id="clearScores" class="clear-scores-btn btn-style-main">Clear All Scores</button>
+                </div>
+             
+            </div>
+        </section>
+    </main>
     <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/logic.js"></script>
-  </body>
+
+</body>
+
 </html>
