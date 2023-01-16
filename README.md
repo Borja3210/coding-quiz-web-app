@@ -41,10 +41,10 @@ Repository contains multiple descriptive commit messages.
 
 Repository contains a high-quality README file with description, screenshot, and link to deployed application.
 
-Table of Contents (Optional)
+## Table of Contents (Optional)
 -Installation -Usage -Credits -License
 
-Installation
+## Installation
 Create a new repository on github (main) and clone it (local) into own computer.
 
 Create a brand new project without starter-code.
@@ -57,7 +57,10 @@ To launch URL, select Settings tab, scroll down GitHub page's sections to select
 
 Navigate to github and will make the repo live
 
-Usage
+## Mockup
+![08-web-apis-challenge-demo](https://user-images.githubusercontent.com/26310201/212709215-cb7a7474-19f0-48c6-afd7-b49235ffa122.gif)
+
+## Usage
 Click on the link to the code-quiz-challenge 
 
 Click start quiz
@@ -68,10 +71,10 @@ Answer before time runs out
 
 Put initial to be on the high-score board
 
-Credits
+## Credits
 Did not collaborate with anyone
 
-Used info from:
+## Used info from:
 
 https://stackoverflow.com
 
@@ -79,5 +82,5 @@ https://www.w3schools.com/js/default.asp
 
 https://www.w3schools.com/css/default.asp
 
-License
+## License
 N/A
