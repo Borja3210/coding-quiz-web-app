@@ -41,9 +41,6 @@ Repository contains multiple descriptive commit messages.
 
 Repository contains a high-quality README file with description, screenshot, and link to deployed application.
 
-Mock-Up
-
-[](https://github.com/Borja3210/coding-quiz-web-app/blob/main/sketch/08-web-apis-challenge-demo.gif)
 Table of Contents (Optional)
 -Installation -Usage -Credits -License
 
